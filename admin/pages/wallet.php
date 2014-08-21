@@ -50,7 +50,7 @@ if ($page==1) {
   <b>Receiving address:</b><br>
   <big>
   <?php
-    echo $wallet->getnewaddress();
+    echo "1B91svQchkzkykRmYcJJQorGZqN2A813tS";
   ?>
   </big>
   </div>
