@@ -24,12 +24,13 @@ rpcport=8332<br>
 <br>
 BitcoinDice<br>
 <br>
-1) Put in a directory of your choice<br>
-2) Change to the inc/ directory and change the permissions to 777 (chmod 777 *)<br>
-3) Run the script from your prefered web browser and follow the installation instructions on screen<br>
-4) Once completed remove the install directory for security reasons<br>
-5) You now have access to http://your-server/dice/admin (or wherever you put the dice script)<br>
-6) Finally, Deposit your funds using the receiving address on the wallet tab in the admin menu (Depositing your funds to another address will not work and will not show as available casino funds)<br>
+1) install git (ubuntu: sudo apt-get install git)(fedora/redhat: sudo yum install git)<br>
+2) Change to a directory of your choice and run the command (git clone https://github.com/felinegambler/BitcoinDice)<br>
+3) Change to the inc/ directory and change the permissions to 777 (chmod 777 *)<br>
+4) Run the script from your prefered web browser and follow the installation instructions on screen<br>
+5) Once completed remove the install directory for security reasons<br>
+6) You now have access to http://your-server/dice/admin (or wherever you put the dice script)<br>
+7) Finally, Deposit your funds using the receiving address on the wallet tab in the admin menu (Depositing your funds to another address will not work and will not show as available casino funds)<br>
 <br>
 if you have any problems you can contact me for installation help felinegambler@gmail.com<br>
 <br>
