@@ -29,7 +29,7 @@ BitcoinDice<br>
 3) Run the script from your prefered web browser and follow the installation instructions on screen<br>
 4) Once completed remove the install directory for security reasons<br>
 5) You now have access to http://your-server/dice/admin (or wherever you put the dice script)<br>
-6) Finally, Deposit your funds using the address on the wallet tab in the admin menu (Depositing your funds to another address will not work and will not show as available casino funds)<br>
+6) Finally, Deposit your funds using the receiving address on the wallet tab in the admin menu (Depositing your funds to another address will not work and will not show as available casino funds)<br>
 <br>
 if you have any problems you can contact me for installation help felinegambler@gmail.com<br>
 <br>
