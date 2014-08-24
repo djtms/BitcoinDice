@@ -30,7 +30,7 @@
   $pages=(int)$xplosion[0]+1;
 
 ?>
-<h1>Players</h1>
+<h1>Gracze</h1>
 <script type="text/javascript">
   function delete_player(p_id,r_id) {
     if (confirm('Do you really want to delete this player?')) {
@@ -104,9 +104,9 @@
     <th>ID</th>
     <th>Alias</th>
     <th>Hash</th>
-    <th>Balance</th>
-    <th>Last Access</th>
-    <th>Manage</th>
+    <th>Saldo</th>
+    <th>Ostatnia wizyta</th>
+    <th>Zarządzaj</th>
   </tr>
   <?php
   $row_=0;                   
