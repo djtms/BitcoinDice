@@ -26,7 +26,7 @@ $settings=mysql_fetch_array(mysql_query("SELECT * FROM `system` WHERE `id`=1 LIM
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php echo $settings['title']; ?> - ADMINISTRATION</title>
+    <title><?php echo $settings['title']; ?> - Administracja</title>
     <meta charset="utf-8">
     <link rel="shortcut icon" href="./favicon.ico">
     <link rel="stylesheet" type="text/css" href="./layout.css">
@@ -50,7 +50,7 @@ $settings=mysql_fetch_array(mysql_query("SELECT * FROM `system` WHERE `id`=1 LIM
       <div id="content" style="text-align: center;">
         <div class="main head">
           <div style="float: left; text-align: left; margin-left: 5px; position: relative; top: 4px;">
-            <b>ADMINISTRATION - <?php echo $settings['title']; ?></b>
+            <b>ADMINISTRACJA - <?php echo $settings['title']; ?></b>
             <br>
             <a href="http://<?php echo $settings['url']; ?>" target="_blank" title="Opens site in new window">← go to site</a>
           </div>
@@ -63,8 +63,8 @@ $settings=mysql_fetch_array(mysql_query("SELECT * FROM `system` WHERE `id`=1 LIM
           <div class="obsah">
             <?php
             if (!$logged) { 
-              if (isset($_GET['login_error'])) echo '<div class="zpravared"><b>Error: </b>Login error.</div>';
-              if (isset($_GET['logouted'])) echo '<div class="zpravagreen"><b>Success: </b>You have been logged out.</div>';
+              if (isset($_GET['login_error'])) echo '<div class="zpravared"><b>Błąd: </b>błędne logowanie.</div>';
+              if (isset($_GET['logouted'])) echo '<div class="zpravagreen"><b>Poprawnie: </b>Zostałeś wylogowany.</div>';
               
               if (!isset($_GET['totp'])) {
                 ?>
@@ -79,11 +79,11 @@ $settings=mysql_fetch_array(mysql_query("SELECT * FROM `system` WHERE `id`=1 LIM
               }
               else {
                 ?>
-                <div class="zprava"><b>Notice:</b> Two-factor authentication is enabled for this account.</div>
+                <div class="zprava"><b>Wskazówka:</b> Dwuskładnikowe uwierzytelnianie jest włączone dla tego konta.</div>
                 <form action="login.php" method="post">
                   <table id="loginT" border="0">
-                    <tr><td>Username:</td><td><b><?php echo $_SESSION['2f_1']['username']; ?></b></td></tr>
-                    <tr><td>Enter one-time password:</td><td><input type="text" name="totp"></td></tr>
+                    <tr><td>Login:</td><td><b><?php echo $_SESSION['2f_1']['username']; ?></b></td></tr>
+                    <tr><td>Wprowadź hasło jednorazowe:</td><td><input type="text" name="totp"></td></tr>
                     <tr><td></td><td><input type="submit" name="prihlaseni" value="Login"></td></tr>
                   </table>
                 </form>
@@ -107,19 +107,19 @@ $settings=mysql_fetch_array(mysql_query("SELECT * FROM `system` WHERE `id`=1 LIM
               <li><a href="./"<?php if (!isset($_GET['p']) || (isset($_GET['p']) && $_GET['p']=='home')) echo ' class="active_"'; ?>>Stats</a></li>
               <li><a href="./?p=players"<?php if (isset($_GET['p']) && $_GET['p']=='players') echo ' class="active_"'; ?>>Players</a></li>
               <li><a href="./?p=bets"<?php if (isset($_GET['p']) && $_GET['p']=='bets') echo ' class="active_"'; ?>>Bets</a></li>          
-              <li><a href="./?p=wallet"<?php if (isset($_GET['p']) && $_GET['p']=='wallet') echo ' class="active_"'; ?>>Wallet</a></li>
-              <li><a href="./?p=news"<?php if (isset($_GET['p']) && $_GET['p']=='news') echo ' class="active_"'; ?>>News</a></li>
-              <li><a href="./?p=admins"<?php if (isset($_GET['p']) && $_GET['p']=='admins') echo ' class="active_"'; ?>>Admins</a></li>
-              <li><a href="./?p=addons"<?php if (isset($_GET['p']) && $_GET['p']=='addons') echo ' class="active_"'; ?>>Addons</a></li>
-              <li><a href="./?p=settings"<?php if (isset($_GET['p']) && $_GET['p']=='settings') echo ' class="active_"'; ?>>Settings</a></li>          
+              <li><a href="./?p=wallet"<?php if (isset($_GET['p']) && $_GET['p']=='wallet') echo ' class="active_"'; ?>>Portfel</a></li>
+              <li><a href="./?p=news"<?php if (isset($_GET['p']) && $_GET['p']=='news') echo ' class="active_"'; ?>>Newsy</a></li>
+              <li><a href="./?p=admins"<?php if (isset($_GET['p']) && $_GET['p']=='admins') echo ' class="active_"'; ?>>Administratorzy</a></li>
+              <li><a href="./?p=addons"<?php if (isset($_GET['p']) && $_GET['p']=='addons') echo ' class="active_"'; ?>>Dodatki</a></li>
+              <li><a href="./?p=settings"<?php if (isset($_GET['p']) && $_GET['p']=='settings') echo ' class="active_"'; ?>>Ustawienia</a></li>          
               <li><p align="center"><small><small><strong><strong>- THIS ACCOUNT -</strong></strong></small></small></p></li>
-              <li><a href="./?p=set_ga"<?php if (isset($_GET['p']) && $_GET['p']=='set_ga') echo ' class="active_"'; ?>>Security</a></li>          
+              <li><a href="./?p=set_ga"<?php if (isset($_GET['p']) && $_GET['p']=='set_ga') echo ' class="active_"'; ?>>Bezpieczeństwo</a></li>          
               <li><a href="./?p=logs"<?php if (isset($_GET['p']) && $_GET['p']=='logs') echo ' class="active_"'; ?>>Access Log</a></li>          
               <?php } ?>
             </ul>
           </div>          
         </div>
-        <div class="main paticka">&copy; <?php echo date('Y',time()).' '; ?> | <?php echo $settings['title']; ?> Administration</div>
+        <div class="main paticka">&copy; <?php echo date('Y',time()).' '; ?> | <?php echo $settings['title']; ?> Administracja</div>
       </div>
     </div>
   </body>
