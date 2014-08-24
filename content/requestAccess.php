@@ -19,7 +19,7 @@ if (empty($_GET['pass']) || md5($_GET['pass'])!=$player['password']) {
 }
 else {
   setcookie('protected_D_',md5($_GET['pass']),0,'/');
-  header('Location: ../?unique='.$_GET['_unique'].'# Do Not Share This URL!');
+  header('Location: ../?unique='.$_GET['_unique'].'# Nie Udostępniaj tego adresu !');
   exit();
 }
 
