@@ -8,5 +8,5 @@
 
 if (!isset($included)) exit();
 ?>
-<h1>Not found!</h1>
-<b>404:</b> Page was not found!
+<h1>Nie znaleziono!</h1>
+<b>404:</b> Strona nie została odnaleziona!
