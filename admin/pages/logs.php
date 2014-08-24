@@ -25,9 +25,9 @@ $pages=(int)$xplosion[0]+1;
 
 ?>
 
-<h1>Access Log</h1>
+<h1>Logi dostępu</h1>
 <div class="strankovani">
-  Page: 
+  Strona: 
   <?php
     $pagesvetsi=false;
     $pages_real=$pages;
@@ -56,8 +56,8 @@ $pages=(int)$xplosion[0]+1;
 <table class="vypis_table">
   <tr class="vypis_table_head">
     <th>ID</th>
-    <th>Time</th>
-    <th>IP address</th>
+    <th>Czas</th>
+    <th>Adres IP</th>
   </tr>
   <?php
   while ($row=mysql_fetch_array($query_)) {
