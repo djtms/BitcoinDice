@@ -1,6 +1,6 @@
 BitcoinDice is a popular Bitcoin Dice game, BitcoinDice is free to use and distribute.<br>
 <br>
-== Pre-Requisites ==<br>
+== Wstępne Wymagania ==<br>
 Linux<br>
 Apache2<br>
 PHP<br>
@@ -11,16 +11,16 @@ bitcoind<br>
 <br>
 bitcoind<br>
 <br>
-1) Install bitcoind<br>
-2) Edit your bitcoin.conf in ~/.bitcoin/bitcoin.conf (you may need to create this) to look like the following, You will need to change the username and pass.<br>
+1) Zainstaluj bitcoind<br>
+2) wyedytuj bitcoin.conf in ~/.bitcoin/bitcoin.conf (może zaistnieć potrzeba utworzenia go) aby wyglądał jak poniżej, Trzeba będzie zmienić nazwę użytkownika i hasło.<br>
 <br>
 server=1<br>
 rpcuser=bitcoinrpc<br>
 rpcpassword=dfbufbSUBUSbf7763YSFYbfybsiyb87<br>
 rpcport=8332<br>
 <br>
-3) run bitcoind -daemon<br>
-4) let it fully sync to the network before moving on to the next part (or the script will not work)<br>
+3) uruchom bitcoind -daemon<br>
+4) niech się w pełni zsynchronizuje się z siecią zanim przejdziemy do następnej części (albo skrypt nie będzie działał)<br>
 <br>
 BitcoinDice<br>
 <br>
