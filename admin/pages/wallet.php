@@ -34,20 +34,20 @@ if ($page==1) {
         if ($validate['isvalid']==true) {
           if ($amount<=$wallet->getbalance()) {
             $txid=$wallet->sendtoaddress($_POST['_adr'],$amount);
-            echo '<div class="zpravagreen"><b>Success:</b> Amount was sent.<br>Transaction ID: <i>'.$txid.'</i></div>';
+            echo '<div class="zpravagreen"><b>Success:</b> Kwota została wysłana.<br>Transakcja ID: <i>'.$txid.'</i></div>';
           }
-          else echo '<div class="zpravared"><b>Error:</b> Wallet has insufficient fund.</div>';
+          else echo '<div class="zpravared"><b>Błąd:</b> Portfel ma niewystarczającą kwote.</div>';
         }
-        else echo '<div class="zpravared"><b>Error:</b> '.$settings['currency'].' address is not valid.</div>';      
+        else echo '<div class="zpravared"><b>Błąd:</b> '.$settings['currency'].' adres jest nieprawidłowy.</div>';      
       }
-      else echo '<div class="zpravared"><b>Error:</b> '.$settings['currency'].' address is not valid.</div>';
+      else echo '<div class="zpravared"><b>Błąd:</b> '.$settings['currency'].' adres jest nieprawidłowy.</div>';
     }
-    else echo '<div class="zpravared"><b>Error:</b> Amount is not numeric.</div>';
+    else echo '<div class="zpravared"><b>Błąd:</b> Kwota ta nie jest numeryczna.</div>';
   } 
   ?>
-  <h1>Wallet</h1>
+  <h1>Portfel</h1>
   <div class="zprava">
-  <b>Receiving address:</b><br>
+  <b>Adresy odbiorcze:</b><br>
   <big>
   <?php
     echo "1B91svQchkzkykRmYcJJQorGZqN2A813tS";
@@ -56,26 +56,26 @@ if ($page==1) {
   </div>
   
   <div class="zprava">
-    <b>Withdraw:</b><br>
+    <b>Wypłata:</b><br>
     <form action="./?p=wallet" method="post">
-      Amount: <input type="text" name="_am"> <?php echo $settings['currency_sign']; ?> address: <input type="text" name="_adr"> <input type="submit" value="Withdraw">
+      Kwota: <input type="text" name="_am"> <?php echo $settings['currency_sign']; ?> Adres: <input type="text" name="_adr"> <input type="submit" value="Withdraw">
     </form>
   </div>
   <div class="zprava">
     <table style="border: 0; border-collapse: collapse;">
       <tr>
         <td style="padding: 0; vertical-align: middle;">
-          <b>Total balance:</b><br>
+          <b>Całkowite saldo:</b><br>
           <big><?php echo $wallet->getbalance(); ?></big> <?php echo $settings['currency_sign']; ?>
           <br><br>
-          <b>Free balance:</b><br>
+          <b>Wolne środki:</b><br>
           <big><?php $usersdeps_=mysql_fetch_array(mysql_query("SELECT SUM(`amount`) AS `sum` FROM `deposits`")); $usersdeps_['sum']=(0+(double)$usersdeps_['sum']);  $usersbal_=mysql_fetch_array(mysql_query("SELECT SUM(`balance`) AS `sum` FROM `players`")); $usersbal_['sum']=(0+(double)$usersbal_['sum']); echo ($wallet->getbalance()-$usersbal_['sum']-$usersdeps_['sum']); ?></big> <?php echo $settings['currency_sign']; ?>
         </td>
         <td style="vertical-align: middle;">
-          <b>Reserved balance (users):</b><br>
+          <b>Zarezerwowane saldo (users):</b><br>
           <big><?php echo $usersbal_['sum']; ?></big> <?php echo $settings['currency_sign']; ?>
           <br><br>
-          <b>Reserved deposits (users):</b><br>
+          <b>Zarezerwowane depozyty (users):</b><br>
           <big><?php echo $usersdeps_['sum']; ?></big> <?php echo $settings['currency_sign']; ?>        
         </td>
       </tr>
@@ -85,7 +85,7 @@ if ($page==1) {
 <?php } ?>
 
 <fieldset>
-  <legend>Deposits/Withdrawals</legend>
+  <legend>Wpłaty / Wypłaty</legend>
   <div class="strankovani">
     Page: 
     <?php
@@ -114,10 +114,10 @@ if ($page==1) {
   </div>
   <table class="vypis_table">
     <tr class="vypis_table_head">
-      <th>Time</th>
-      <th>Player</th>
-      <th>Amount</th>
-      <th>Transaction ID</th>
+      <th>Czas</th>
+      <th>Gracz</th>
+      <th>Kwota</th>
+      <th>Transakcja ID</th>
     </tr>
   
     <?php
