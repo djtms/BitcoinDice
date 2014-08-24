@@ -11,9 +11,9 @@ if (!isset($included)) exit();
 if (isset($_POST['nwa_user']) && isset($_POST['nwa_pass'])) {
   if (!empty($_POST['nwa_user']) && !empty($_POST['nwa_pass'])) {
     mysql_query("INSERT INTO `admins` (`username`,`passwd`) VALUES ('".prot($_POST['nwa_user'])."','".md5($_POST['nwa_pass'])."')");
-    echo '<div class="zpravagreen"><b>Success:</b> Admin was successfuly created!</div>';
+    echo '<div class="zpravagreen"><b>Powodzenie:</b> Administrator został utworzony!</div>';
   }
-  else echo '<div class="zpravared"><b>Error:</b> One of required fields stayed empty!</div>';
+  else echo '<div class="zpravared"><b>Błąd:</b> Jedno z wymaganych pól jest Puste!</div>';
 }
 ?>
 
@@ -30,10 +30,10 @@ if (isset($_POST['nwa_user']) && isset($_POST['nwa_pass'])) {
         'success': function(data) {
           $("tr#row"+a_id+" td.a__ali").html(a_alias);
           $("tr#row"+a_id+" a#edit_karos").attr('onclick',"javascript:edit_admin("+a_id+",'"+a_alias+"');return false;");
-          message('success','Admin has been updated.');
+          message('success','Administrator został zaktualizowany.');
         }
       });
-    } else message('error',"One of fields has an incorrect value. Please, try again.");
+    } else message('error',"Jedno z pól ma nieprawidłową wartość. Proszę spróbować ponownie.");
   }
   function removeAdmin(id) {
     if (confirm('Do you really want to delete this admin?')) {
@@ -49,19 +49,19 @@ if (isset($_POST['nwa_user']) && isset($_POST['nwa_pass'])) {
   }
 </script>
 
-<h1>Administrators</h1>
+<h1>Administratorzy</h1>
 <div class="zprava">
-<b>New admin:</b><br>
+<b>Nowy admin:</b><br>
 <form action="./?p=admins" method="post">
-  Username: <input type="text" name="nwa_user"> Password: <input type="password" name="nwa_pass"> <input type="submit" value="Create">
+  Nazwa użytkownika: <input type="text" name="nwa_user"> Hasło: <input type="password" name="nwa_pass"> <input type="submit" value="Create">
 </form>
 </div>
 <table class="vypis_table">
   <tr class="vypis_table_head">
     <th align="center">ID</th>
-    <th align="center">Username</th>
+    <th align="center">Login</th>
     <th align="center">Two-factor auth.</th>
-    <th align="center">Actions</th>
+    <th align="center">Akcje</th>
   </tr>
     <?php
     $qu=mysql_query("SELECT * FROM `admins`");
