@@ -25,7 +25,7 @@ $xplosion=explode('.',(string)$pages_);
 $pages=(int)$xplosion[0]+1;
 
 ?>
-<h1>Bets</h1>
+<h1>Zakłady</h1>
 <div class="strankovani">
   Page: 
   <?php
@@ -56,13 +56,13 @@ $pages=(int)$xplosion[0]+1;
 <table class="vypis_table">
   <tr class="vypis_table_head">
     <th>ID</th>
-    <th>Player</th>
-    <th>Time</th>
+    <th>Gracz</th>
+    <th>Czas</th>
     <th>Bet</th>
-    <th>Multiplier</th>
+    <th>Mnożnik</th>
     <th>Target</th>
     <th>Roll</th>
-    <th>Profit</th>
+    <th>Zysk</th>
   </tr>
   <?php
   while ($row=mysql_fetch_array($query_)) {
