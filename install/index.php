@@ -56,7 +56,7 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BitcoinDice 1.0 - Installation</title>
+    <title>BitcoinDice 1.0 - Instalator</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./install_page.css">
     <link rel="shortcut icon" href="./favicon.ico">
@@ -65,7 +65,7 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
   <body>
     <div class="allbody">
       <div class="alls" style="text-align: center;">
-        <h1>BitcoinDice 1.0 Installation</h1>
+        <h1>BitcoinDice 1.0 Instalacja</h1>
       </div>
     </div>
     <?php
@@ -79,8 +79,8 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
         </script>
         <div class="allbody">
           <div class="alls">
-            <h3>Welcome!</h3>
-            This is an automatic installation script. Please, follow the instructions on the following screens.
+            <h3>Witamy!</h3>
+            To jest automatyczny skrypt instalacyjny. Proszę, postępuj według instrukcji wyświetlanych w kolejnych krokach.
           </div>
         </div>
       <?php
@@ -94,8 +94,8 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
         </script>
         <div class="allbody">
           <div class="alls">
-            <h3>File Permissions</h3>
-            Please make sure that following files are writable (chmod 777):
+            <h3>Uprawnienia plików</h3>
+            Upewnij się, że pliki mają prawa zapisu (chmod 777):
             <br>
             <table>
               <tr>
@@ -110,7 +110,7 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
               </tr>
             </table>
             <br>
-            The above files should be writable, otherwise the installation will not continue!
+            Powyższe pliki powinny być zapisywalne, w przeciwnym razie instalacja nie będzie kontynuowana!
           </div>
         </div>
       <?php
@@ -144,8 +144,8 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
         <div class="allbody">
           <div class="alls">
             <form id="mform" method="post" action="./?checkCons">
-              <h3>Database Info</h3>
-              <i>Please fill in correct database info:</i>
+              <h3>Baza Danych</h3>
+              <i>Proszę o wpisanie poprawnych informacji o bazie danych:</i>
               <br>
               <table>
                 <tr>
@@ -153,11 +153,11 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
                   <td><input type="text" name="db_host" id="db_host" value="localhost"></td>
                 </tr>
                 <tr>
-                  <td>Username:</td>
+                  <td>użytkownik:</td>
                   <td><input type="text" name="db_user" id="db_user" placeholder="DB user"></td>
                 </tr>
                 <tr>
-                  <td>Password:</td>
+                  <td>Hasło:</td>
                   <td><input type="text" name="db_pass" id="db_pass" placeholder="DB pass"></td>
                 </tr>
                 <tr>
@@ -166,8 +166,8 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
                 </tr>
               </table>
               
-              <h3>Wallet Info</h3>
-              <i>Please fill in correct wallet info:</i>
+              <h3>Informacje o Portfelu</h3>
+              <i>Proszę o podanie poprawnych danych o portfelu:</i>
               <br>
               <table>
                 <tr>
@@ -179,7 +179,7 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
                   <td><input type="text" name="w_user" id="w_user" placeholder="Wallet user"></td>
                 </tr>
                 <tr>
-                  <td>Password:</td>
+                  <td>Hasło:</td>
                   <td><input type="text" name="w_pass" id="w_pass" placeholder="Wallet password"></td>
                 </tr>
                 <tr>
@@ -201,16 +201,16 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
         </script>
         <div class="allbody">
           <div class="alls">
-            <h3>Basic Settings</h3>
+            <h3>Ustawienia podstawowe</h3>
             <br>
             <form id="mform" action="./?saveB" method="post">
               <table>
                 <tr>
-                  <td>Site title:</td>
+                  <td>Tytuł Strony:</td>
                   <td><input type="text" name="s_title"></td>
                 </tr>
                 <tr>
-                  <td>Site description:</td>
+                  <td>Opis Strony:</td>
                   <td><input type="text" name="s_desc"></td>
                 </tr>
                 <tr>
@@ -219,11 +219,11 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
                   <td>(<b>without <i>http://</i></b>)</td>
                 </tr>
                 <tr>
-                  <td>Currency:</td>
+                  <td>Waluta:</td>
                   <td><input type="text" name="s_cur" value="Bitcoin" disabled></td>
                 </tr>
                 <tr>
-                  <td>Currency sign:</td>
+                  <td>Symbol Waluty:</td>
                   <td><input type="text" name="s_cur_sign" value="BTC" disabled></td>
                 </tr>
               </table>
@@ -241,28 +241,28 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
         </script>
         <div class="allbody">
           <div class="alls">
-            <h3>CRON setup</h3>
-            In order to BitcoinDice work properly, you must have the CRON set this way:
+            <h3>konfiguracja CRON</h3>
+            Aby BitCoinDice mógł działać poprawnie, musisz mieć CRON ustawionego w ten sposób:
             <br><br>
-            <b>Every 1 minute</b>: <i>content/cron/check_deposits.php</i>
+            <b>Co 1 minute</b>: <i>content/cron/check_deposits.php</i>
             <br><br><hr>
-            <b>Example (Linux):</b>
+            <b>Przykład (Linux):</b>
             <br><br>
-            1) <i>Open CRON table:</i>
+            1) <i>Otwórz CRON table:</i>
             <br>
             $ crontab -e
             <br><br>
-            2) <i>Add the following line:</i>
+            2) <i>Dodaj poniższą linie:</i>
             <br>
             * * * * * cd /var/www/content/cron; php check_deposits.php;
             <br><br>
-            3) Save CRON table by pressing <b>CTRL</b>+<b>X</b>, than confirm (<b>Y</b>) and press <b>enter</b>.
+            3) Zapisz zadanie CRONA przyciskając <b>CTRL</b>+<b>X</b>, następnie potwierdź (<b>Y</b>) i wciśnij <b>enter</b>.
             <br><br>
-            4) Restart CRON service:
+            4) Restart zadań CRON-a:
             <br>
             $ service cron restart
             <br><br>
-            That's all.            
+            To wszystko.            
              
           </div>
         </div>
@@ -274,18 +274,18 @@ if ($step==3 && (!is_writable('../inc/db-conf.php') || !is_writable('../inc/driv
           <div class="alls">
             <h3>Thank You!</h3>
             <br>
-            Your installation is done! You can login to administration or try your luck at your own gambling site :-) 
+            Instalacja jest zakończona! Możesz zalogować się do panelu administracji lub spróbować szczęścia w swojej własnej stronie hazardowej:-) 
             <br>
             <br>
-            Admin details:<br>
-            &nbsp;Username: <b>admin</b><br>
-            &nbsp;Password: <b>admin</b>
+            Informacje o Administratorze:<br>
+            &nbsp;Użytkownik: <b>admin</b><br>
+            &nbsp;Hasło: <b>admin</b>
             <br>
             <br>
-            <i>Don't forget to change this info after first login!</i>
+            <i>Nie zapomnij, aby zmienić te informacje przy pierwszym logowaniu!</i>
             <br>
             <br>
-            <b>Warning!</b> Please remove the <i>/install</i> directory now, otherwise there is a security risk.
+            <b>Ostrzeżenie!</b> Proszę usunąć katalog <i>/install</i> teraz, w przeciwnym razie istnieje zagrożenie dla bezpieczeństwa strony.
           </div>
         </div>
       <?php        
