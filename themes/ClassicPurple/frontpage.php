@@ -26,7 +26,7 @@
               <table width="100%">
                 <tr>
                   <td valign="top" id="blikators" style="padding-top: 2px; width: 140px;">
-                    <small><small><b>SALDO</b></small></small><br>
+                    <small><small><b>STAN KONTA</b></small></small><br>
                     <big><b><span class="balance"><?php echo sprintf("%.8f",$player['balance']); ?></span></b> <?php echo $settings['currency_sign']; ?></big>
                   </td>
                   <td valign="top" align="left">
@@ -34,7 +34,7 @@
                   </td>
                   <td valign="top" align="right">
                     <a class="balanceRegulators" href="#" onclick="javascript:return deposit();">WPŁATA</a>
-                    <a class="balanceRegulators" href="#" onclick="javascript:return withdraw();">WYPŁAĆ</a>
+                    <a class="balanceRegulators" href="#" onclick="javascript:return withdraw();">WYPŁATA</a>
                   </td>
                 </tr>
               </table>
@@ -44,11 +44,11 @@
               <div id="c_centerSep" class="c_centerSepR"></div>
               <br>
               <div style="float: left;">
-                <small><small><b>KWOTA ZAKŁADU</b></small></small><br>
+                <small><small><b>STAWKA ZAKŁADU</b></small></small><br>
                 <input type="text" id="bt_wager" class="bt_input top3 wagerInput" value="0.00000000"><a href="#" onclick="javascript:clickdouble();return false;" class="bt_button double rightSep">2x</a><a href="#" onclick="javascript:clickmax();return false;" class="bt_button max">MAX</a>
               </div>
               <div style="float: right;">
-                <small><small><b>ZYSK NA ZWYCIĘSTWO</b></small></small><br>
+                <small><small><b>ZYSK ZA ZWYCIĘSTWO</b></small></small><br>
                 <input type="text" id="bt_profit" class="bt_input top3 wagerInput profitInput" value="0.00000000"><a href="#" onclick="javascript:maxProfit();return false;" class="bt_button max">MAX</a>            
               </div>
               <div class="betTb">
@@ -65,7 +65,7 @@
                   <input type="text" id="betTb_chance" class="bt_input top3 betTb_input betTb_payoutL" value="49.50"><input type="text" id="betTb_chance_Rp" class="bt_input top3 betTb_input betTb_payoutR" readonly="readonly" onclick="javascript:$('#betTb_chance').focus();" value="%">
                 </div>
               </div>
-              <a href="#" onclick="javascript:place($('#bt_wager').val(),$('#betTb_multiplier').val(),false);return false;" id="betBtn" class="betBtn">ROLL DICE</a>
+              <a href="#" onclick="javascript:place($('#bt_wager').val(),$('#betTb_multiplier').val(),false);return false;" id="betBtn" class="betBtn">RZUT KOSTKĄ</a>
           </div>
 
           <!-- BETTING BOT -- BASICLY INVISIBLE -->
@@ -90,10 +90,10 @@
                 <table width="95%" style="border-collapse: collapse;">
                   <tr>
                     <td valign="top" style="padding-bottom: 4px;">
-                      <small><b>CO ROBIĆ</b></small><br>
+                      <small><b>JAK GRAĆ</b></small><br>
                       <div style="margin-top: 19px;">
                         <input id="bB_operate_rolls" class="bB_checkbox" type="checkbox" checked="checked">
-                        <label for="bB_operate_rolls" class="bB_label"><small>Klejek</small></label>                
+                        <label for="bB_operate_rolls" class="bB_label"><small>Kolejek</small></label>                
                         <input id="bB_operate_secs" class="bB_checkbox" type="checkbox">
                         <label for="bB_operate_secs" class="bB_label"><small>Sekund</small></label>                
                       </div>
@@ -152,7 +152,7 @@
                 </table>
               </div>
             </div>          
-            <a href="#" onclick="javascript:startAutomat();return false;" id="botBtn" class="betBtn">START BOTA AUTOMATYCZNEGO</a>
+            <a href="#" onclick="javascript:startAutomat();return false;" id="botBtn" class="betBtn">START GRY AUTOMATYCZNEJ</a>
           </div>
           <!--// BETTING BOT -- BASICLY INVISIBLE -->
 
