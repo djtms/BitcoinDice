@@ -25,18 +25,18 @@ switch ($_GET['con']) {
     $player=mysql_fetch_array(mysql_query("SELECT * FROM `players` WHERE `hash`='".prot($_GET['_unique'])."' LIMIT 1"));
     
     $my_bets=mysql_query("SELECT * FROM `bets` WHERE `player`=$player[id] ORDER BY `time` DESC LIMIT 30");
-    if (mysql_num_rows($my_bets)==0) $content.='<br><br><br><i>You haven\'t bet yet.</i>';
+    if (mysql_num_rows($my_bets)==0) $content.='<br><br><br><i>Jeszcze nie obstawiałeś.</i>';
     else {
       $content.='<table id="bets_st_table">';
       $content.='<tr>';
       $content.='<th>BET ID</th>';
       $content.='<th>PLAYER</th>';
-      $content.='<th>TIME</th>';
-      $content.='<th>BET</th>';
-      $content.='<th>MULTIPLIER</th>';
+      $content.='<th>CZAS</th>';
+      $content.='<th>STAWKA</th>';
+      $content.='<th>MNOŻNIK</th>';
       $content.='<th>TARGET</th>';
-      $content.='<th>ROLL</th>';
-      $content.='<th>PROFIT</th>';
+      $content.='<th>RZUT</th>';
+      $content.='<th>ZYSK</th>';
       $content.='</tr>';
       $suda=0;
       while ($my_bet=mysql_fetch_array($my_bets)) {
@@ -78,13 +78,13 @@ switch ($_GET['con']) {
       $content.='<table id="bets_st_table">';
       $content.='<tr>';
       $content.='<th>BET ID</th>';
-      $content.='<th>PLAYER</th>';
-      $content.='<th>TIME</th>';
-      $content.='<th>BET</th>';
-      $content.='<th>MULTIPLIER</th>';
+      $content.='<th>GRACZ</th>';
+      $content.='<th>CZAS</th>';
+      $content.='<th>STAWKA</th>';
+      $content.='<th>MNOŻNIK</th>';
       $content.='<th>TARGET</th>';
-      $content.='<th>ROLL</th>';
-      $content.='<th>PROFIT</th>';
+      $content.='<th>RZUT</th>';
+      $content.='<th>ZYSK</th>';
       $content.='</tr>';
       $suda=0;
       while ($all_bet=mysql_fetch_array($all_bets)) {
@@ -129,11 +129,11 @@ switch ($_GET['con']) {
       $content.=str_replace('[I]','<i>',str_replace('[/I]','</i>',str_replace('[BR]','<br>',str_replace('[/B]','</b>',str_replace('[B]','<b>',$row['content']))))).'<br><span class="news_single_time">'.$row['time'].'</span>';
       $content.='</div>';
     }
-    if (mysql_num_rows($query)==0) $content.='<i>No news available.</i>';    
+    if (mysql_num_rows($query)==0) $content.='<i>Brak wiadomości.</i>';    
   break;
   case 'giveaway':
     if ($settings['giveaway']!=1) {
-      $content.='<br><br><br><i>Giveaway is not supported now.</i>';
+      $content.='<br><br><br><i>Gratisy są w tej chwili niedostępne.</i>';
     }
     else {
       if (empty($_GET['_unique']) || mysql_num_rows(mysql_query("SELECT `id` FROM `players` WHERE `hash`='".prot($_GET['_unique'])."' LIMIT 1"))==0) exit();
@@ -144,7 +144,7 @@ switch ($_GET['con']) {
       else {
         $content.='<br><br><br>You can claim the '.$settings['currency'].' bonus now:<br><br>';
         $content.='<big><big><b>'.$settings['giveaway_amount'].'</b> '.$settings['currency_sign'].'</big></big><br><br>';
-        $content.='<table><tr><td valign="top" style="padding: 4px 0;">Enter text from image:</td><td valign="top"><input type="text" id="captchatext" maxlength="4" style="width: 140px; padding: 4px; text-transform: uppercase;"><br><img src="./content/captcha/genImage.php" style="position: relative; top: 4px;"></img></td><td valign="top"><button onclick="javascript:claim($(\'#captchatext\').val());return false;" style="padding: 4px;">Claim</button></td></tr></table>';
+        $content.='<table><tr><td valign="top" style="padding: 4px 0;">Wpisz tekst z obrazka:</td><td valign="top"><input type="text" id="captchatext" maxlength="4" style="width: 140px; padding: 4px; text-transform: uppercase;"><br><img src="./content/captcha/genImage.php" style="position: relative; top: 4px;"></img></td><td valign="top"><button onclick="javascript:claim($(\'#captchatext\').val());return false;" style="padding: 4px;">Claim</button></td></tr></table>';
       }
     }
   break;
@@ -157,44 +157,44 @@ switch ($_GET['con']) {
 
     $content.='<table width="100%">';
     $content.='<tr><th>Your Stats</th><th class="center"><img src="./content/images/diceStats.png"></th><th>Global Stats</th></tr>';
-    $content.='<tr><td>'.$player['t_bets'].'</td><td class="center">NUMBER OF BETS</td><td>'.$settings['t_bets'].'</td></tr>';    
-    $content.='<tr><td>'.$player['t_wagered'].'</td><td class="center">TOTAL WAGERED</td><td>'.$settings['t_wagered'].'</td></tr>';    
-    $content.='<tr><td>'.$player['t_profit'].'</td><td class="center">TOTAL PROFIT</td><td>'.$settings['t_player_profit'].'</td></tr>';    
-    $content.='<tr class="wins"><td>'.$player['t_wins'].'</td><td class="center">WINS</td><td>'.$settings['t_wins'].'</td></tr>';    
-    $content.='<tr class="losses"><td>'.($player['t_bets']-$player['t_wins']).'</td><td class="center">LOSSES</td><td>'.($settings['t_bets']-$settings['t_wins']).'</td></tr>';    
-    $content.='<tr class="wl"><td>'.sprintf("%.3f",$player['t_wins']/($player['t_bets']-$player['t_wins'])).'</td><td class="center">W/L RATIO</td><td>'.sprintf("%.3f",$settings['t_wins']/($settings['t_bets']-$settings['t_wins'])).'</td></tr>';    
+    $content.='<tr><td>'.$player['t_bets'].'</td><td class="center">Liczba zakładów</td><td>'.$settings['t_bets'].'</td></tr>';    
+    $content.='<tr><td>'.$player['t_wagered'].'</td><td class="center">SUMA ZAKŁADÓW</td><td>'.$settings['t_wagered'].'</td></tr>';    
+    $content.='<tr><td>'.$player['t_profit'].'</td><td class="center">SUMA WYGRANYCH</td><td>'.$settings['t_player_profit'].'</td></tr>';    
+    $content.='<tr class="wins"><td>'.$player['t_wins'].'</td><td class="center">WYGRANYCH</td><td>'.$settings['t_wins'].'</td></tr>';    
+    $content.='<tr class="losses"><td>'.($player['t_bets']-$player['t_wins']).'</td><td class="center">PRZEGRANYCH</td><td>'.($settings['t_bets']-$settings['t_wins']).'</td></tr>';    
+    $content.='<tr class="wl"><td>'.sprintf("%.3f",$player['t_wins']/($player['t_bets']-$player['t_wins'])).'</td><td class="center">STOSUNEK W/P</td><td>'.sprintf("%.3f",$settings['t_wins']/($settings['t_bets']-$settings['t_wins'])).'</td></tr>';    
     $content.='</table>';
     
     $content.='</div>';
   break;
   case 'chat':
     if ($settings['chat_enable']!=1) {
-      $content.='<br><br><br><i>Chat is not supported now.</i>';
+      $content.='<br><br><br><i>Czat nie jest teraz obsługiwany.</i>';
     }
     else {
-      $content.='<br><br><br><input type="text" id="composeTxt"><button onclick="javascript:compose($(\'#composeTxt\').val());return false;" id="composeBtn">Send</button>';
+      $content.='<br><br><br><input type="text" id="composeTxt"><button onclick="javascript:compose($(\'#composeTxt\').val());return false;" id="composeBtn">Wyślij</button>';
       $content.='<div id="chatWindow"></div>';
       $content.='<script type="text/javascript">';
       $content.='initializeRefreshingFrameChat();';
       $content.='$("#composeTxt").keypress(function(e) { if (e.which==13) compose($("#composeTxt").val()); });';
-      $content.='$("#composeTxt").qtip({content:{text:\'Press enter to send\'},style:{classes:\'qtip-bootstrap qtip-shadow\'},position:{my:\'bottom left\',at:\'top left\'}});';
+      $content.='$("#composeTxt").qtip({content:{text:\'Naciśnij klawisz Enter, aby wysłać\'},style:{classes:\'qtip-bootstrap qtip-shadow\'},position:{my:\'bottom left\',at:\'top left\'}});';
       $content.='</script>';
     }
   break;
   case 'high_rollers':
     $all_bets=mysql_query("SELECT *,(`bet_amount`*`multiplier`) AS `profit_on_win` FROM `bets` WHERE `bet_amount`!=0 AND `win_lose`=1 ORDER BY `profit_on_win` DESC LIMIT 30");
-    if (mysql_num_rows($all_bets)==0) $content.='<br><br><br><i>No one has bet yet.</i>';
+    if (mysql_num_rows($all_bets)==0) $content.='<br><br><br><i>Nikt jeszcze nie obstawiał.</i>';
     else {
       $content.='<table id="bets_st_table">';
       $content.='<tr>';
       $content.='<th>BET ID</th>';
       $content.='<th>PLAYER</th>';
-      $content.='<th>TIME</th>';
-      $content.='<th>BET</th>';
-      $content.='<th>MULTIPLIER</th>';
+      $content.='<th>CZAS</th>';
+      $content.='<th>STAWKA</th>';
+      $content.='<th>MNOŻNIK</th>';
       $content.='<th>TARGET</th>';
       $content.='<th>ROLL</th>';
-      $content.='<th>PROFIT</th>';
+      $content.='<th>ZYSK</th>';
       $content.='</tr>';
       $suda=0;
       while ($all_bet=mysql_fetch_array($all_bets)) {
