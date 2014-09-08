@@ -90,12 +90,12 @@
                 <table width="95%" style="border-collapse: collapse;">
                   <tr>
                     <td valign="top" style="padding-bottom: 4px;">
-                      <small><b>DZIAŁANIE</b></small><br>
+                      <small><b>CO ROBIĆ</b></small><br>
                       <div style="margin-top: 19px;">
                         <input id="bB_operate_rolls" class="bB_checkbox" type="checkbox" checked="checked">
-                        <label for="bB_operate_rolls" class="bB_label"><small>Klejki</small></label>                
+                        <label for="bB_operate_rolls" class="bB_label"><small>Klejek</small></label>                
                         <input id="bB_operate_secs" class="bB_checkbox" type="checkbox">
-                        <label for="bB_operate_secs" class="bB_label"><small>Sekundy</small></label>                
+                        <label for="bB_operate_secs" class="bB_label"><small>Sekund</small></label>                
                       </div>
                       <div>
                         <input type="text" id="bt_rolls_bB" class="bt_input top3 betTb_input betTb_rto lessHeight" value="100">
@@ -105,11 +105,11 @@
                       <div><small><b>PO PRZEGRANEJ</b></small></div>
                       <div>
                         <input id="bB_loss_return" class="bB_checkbox" type="checkbox">
-                        <label for="bB_loss_return" class="bB_label"><small>Powrót do Bazowej</small></label>                
+                        <label for="bB_loss_return" class="bB_label"><small>Powrót do Startowej</small></label>                
                       </div>
                       <div>
                         <input id="bB_loss_increase" class="bB_checkbox" type="checkbox" checked="checked">
-                        <label for="bB_loss_increase" class="bB_label"><small>Zwiększyć zakład o:</small></label><br>                
+                        <label for="bB_loss_increase" class="bB_label"><small>Powiększ zakład o:</small></label><br>                
                         <input type="text" id="bB_loss_increase_by" class="bt_input top3 betTb_input betTb_payoutL increaseLossLeft lessHeight" value="100.00"><input type="text" id="bB_loss_increase_by_Rp" class="bt_input top3 betTb_input betTb_payoutR increaseLoss lessHeight" readonly="readonly" onclick="javascript:$('#bB_loss_increase_by').focus();" value="%">
                       </div>
 
@@ -122,7 +122,7 @@
                       </div>
                       <div>
                         <input id="bB_win_increase" class="bB_checkbox" type="checkbox">
-                        <label for="bB_win_increase" class="bB_label"><small>Zwiększyć zakład o:</small></label><br>                
+                        <label for="bB_win_increase" class="bB_label"><small>Powiększ zakład o:</small></label><br>                
                         <input type="text" id="bB_win_increase_by" class="bt_input top3 betTb_input betTb_payoutL increaseLossLeft lessHeight" value="0.00"><input type="text" id="bB_win_increase_by_Rp" class="bt_input top3 betTb_input betTb_payoutR increaseLoss lessHeight" readonly="readonly" onclick="javascript:$('#bB_win_increase_by').focus();" value="%">
                       </div>
                     </td>
@@ -130,14 +130,14 @@
                   <tr>
                     <td valign="top" style="padding-top: 10px;">
                       <div>
-                        <small><small><b>BAZOWY ZAKŁAD</b></small></small><br>
+                        <small><small><b>STAWKA STARTOWA</b></small></small><br>
                         <input type="text" id="bt_wager_bB" class="bt_input top3 betTb_input betTb_fixed lessHeight" value="0.00000000">
                       </div>                    
                     </td>
                     <td valign="top" style="padding-top: 8px;">
                       <div style="margin-top: 2px;">
                         <input id="bB_max_loss" class="bB_checkbox" type="checkbox">
-                        <label for="bB_max_loss" class="bB_label"><small>Maks Strata:</small></label><br>                
+                        <label for="bB_max_loss" class="bB_label"><small>Max Strata:</small></label><br>                
                         <input type="text" id="bB_max_loss_val" class="bt_input top3 betTb_input lessHeight" style="width: 85px;" value="0.00000000">                        
                       </div>                    
                     </td>
@@ -152,7 +152,7 @@
                 </table>
               </div>
             </div>          
-            <a href="#" onclick="javascript:startAutomat();return false;" id="botBtn" class="betBtn">START AUTOMATIC BETTING</a>
+            <a href="#" onclick="javascript:startAutomat();return false;" id="botBtn" class="betBtn">START BOTA AUTOMATYCZNEGO</a>
           </div>
           <!--// BETTING BOT -- BASICLY INVISIBLE -->
 
@@ -163,7 +163,7 @@
     <div id="all" class="downer">
       <div id="content" class="stats_switcher">
         <a href="#" onclick="javascript:_stats_content('my_bets');return false;" id="_st_my_bets">MOJE ZAKŁADY</a>
-        <a href="#" onclick="javascript:_stats_content('all_bets');return false;" id="_st_all_bets">WSZYSTKIE ZAKŁADY</a>
+        <a href="#" onclick="javascript:_stats_content('all_bets');return false;" id="_st_all_bets">WSZYSTKIE</a>
         <a href="#" onclick="javascript:_stats_content('high_rollers');return false;" id="_st_high_rollers">WYSOKIE STAWKI</a>
 
         <?php if ($settings['giveaway']==1) { ?><a href="#" class="mini" onclick="javascript:_stats_content('giveaway');return false;" id="_st_giveaway"><img src="./themes/<?php echo $settings['activeTheme']; ?>/icons/giveaway.png" style="position: relative; top: 5px; width: 35px; height: 35px;"></a><?php } ?>
@@ -179,6 +179,6 @@
     </div>
     <div id="all" class="footer">
       <div id="content" class="footer">
-        &copy; <?php echo Date('Y').' '.$settings['title']; ?>. All rights reserved.
+        &copy; <?php echo Date('Y').' '.$settings['title']; ?>. Wszelkie prawa zastrzeżone.
       </div>
     </div>
