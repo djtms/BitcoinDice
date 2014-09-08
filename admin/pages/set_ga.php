@@ -64,7 +64,7 @@ function pair() {
 } 
 </script>
 
-<h1>Konfiguracja uwierzytelniania dwa etapowego</h1>
+<h1>Konfiguracja uwierzytelniania dwu etapowego</h1>
 
 <?php
 if ($this_admin['ga_token']=='') {
