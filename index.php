@@ -1,8 +1,8 @@
 <?php
 /*
  *  © BitcoinDice 
-
-
+ * Modyfication by djtms:
+ + font awesome 4.2 (MAXCDN)
  
 */
 
@@ -24,6 +24,7 @@ include './inc/start.php';
     <link rel="stylesheet" type="text/css" href="content/ext/msgbox/Styles/msgBoxLight.css">
     <script type="text/javascript" src="content/ext/qtip/jquery.qtip.min.js"></script>
     <link rel="stylesheet" type="text/css" href="content/ext/qtip/jquery.qtip.min.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script type="text/javascript" src="js/colors.js"></script>    
     <?php include './js/includer.php'; ?>
   </head>
